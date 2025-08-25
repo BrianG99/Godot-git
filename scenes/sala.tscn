@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://chdepxtwv1no3"]
+
+[ext_resource type="Texture2D" uid="uid://bfh8wrb1l6d2x" path="res://assets/fondo.jpg" id="1_uox7l"]
+[ext_resource type="PackedScene" uid="uid://baku4wy4edyl4" path="res://character/perroide.tscn" id="2_mteyr"]
+
+[node name="Sala" type="Node2D"]
+show_behind_parent = true
+position = Vector2(575, 327)
+scale = Vector2(-0.678905, -0.659277)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.443458, -0.39063)
+texture = ExtResource("1_uox7l")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_mteyr")]
+top_level = true
+position = Vector2(594, 497)
