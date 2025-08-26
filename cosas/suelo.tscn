@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0xovowqc05lm"]
+
+[ext_resource type="Texture2D" uid="uid://d0qijwypbfv72" path="res://assets/interior/floorswalls_LRK.png" id="1_5d3ik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3tn4"]
+size = Vector2(64, 42)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+texture_filter = 1
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5d3ik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_r3tn4")

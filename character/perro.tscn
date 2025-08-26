@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dig2m3go6ub42"]
+
+[ext_resource type="Texture2D" uid="uid://d4i0d2d5alhik" path="res://assets/Perro.png" id="1_tguo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfjn6"]
+size = Vector2(830.5, 716)
+
+[node name="Perro" type="CharacterBody2D"]
+scale = Vector2(0.0400075, 0.0375771)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tguo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.75, 17)
+shape = SubResource("RectangleShape2D_sfjn6")

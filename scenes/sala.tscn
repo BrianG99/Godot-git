@@ -1,17 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://chdepxtwv1no3"]
+[gd_scene load_steps=4 format=3 uid="uid://cfwnvqbhdbv8s"]
 
+[ext_resource type="PackedScene" uid="uid://dig2m3go6ub42" path="res://character/perro.tscn" id="1_mteyr"]
 [ext_resource type="Texture2D" uid="uid://bfh8wrb1l6d2x" path="res://assets/fondo.jpg" id="1_uox7l"]
-[ext_resource type="PackedScene" uid="uid://baku4wy4edyl4" path="res://character/perroide.tscn" id="2_mteyr"]
+[ext_resource type="PackedScene" uid="uid://b0xovowqc05lm" path="res://cosas/suelo.tscn" id="3_3rsqy"]
 
 [node name="Sala" type="Node2D"]
-show_behind_parent = true
-position = Vector2(575, 327)
-scale = Vector2(-0.678905, -0.659277)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.443458, -0.39063)
-texture = ExtResource("1_uox7l")
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_mteyr")]
+[node name="Perro" parent="." instance=ExtResource("1_mteyr")]
 top_level = true
-position = Vector2(594, 497)
+position = Vector2(149, 215)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.1255, 0.106362)
+texture = ExtResource("1_uox7l")
+stretch_mode = 1
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_3rsqy")]
+position = Vector2(32, 232)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_3rsqy")]
+position = Vector2(96, 232)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_3rsqy")]
+position = Vector2(160, 232)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_3rsqy")]
+position = Vector2(224, 232)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("3_3rsqy")]
+position = Vector2(288, 232)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("3_3rsqy")]
+position = Vector2(352, 232)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("3_3rsqy")]
+position = Vector2(416, 232)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("3_3rsqy")]
+position = Vector2(480, 232)
