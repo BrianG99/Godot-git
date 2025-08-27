@@ -8,7 +8,9 @@
 
 [node name="Perro" parent="." instance=ExtResource("1_mteyr")]
 top_level = true
+texture_filter = 1
 position = Vector2(149, 215)
+move_speed = 100.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
