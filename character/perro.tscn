@@ -1,7 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://dig2m3go6ub42"]
+[gd_scene load_steps=10 format=3 uid="uid://dig2m3go6ub42"]
 
 [ext_resource type="Script" uid="uid://cpvxntwn8a2rg" path="res://character/perro.gd" id="1_sfjn6"]
-[ext_resource type="Texture2D" uid="uid://d4i0d2d5alhik" path="res://assets/Perro.png" id="1_tguo2"]
+[ext_resource type="Texture2D" uid="uid://cjtelmdospwfs" path="res://assets/Perro-Sheet.png" id="2_sfjn6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfjn6"]
+atlas = ExtResource("2_sfjn6")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w45cx"]
+atlas = ExtResource("2_sfjn6")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvxa2"]
+atlas = ExtResource("2_sfjn6")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ukly"]
+atlas = ExtResource("2_sfjn6")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdomi"]
+atlas = ExtResource("2_sfjn6")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qdomi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfjn6")
+}],
+"loop": true,
+"name": &"caida",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w45cx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvxa2")
+}],
+"loop": true,
+"name": &"caminar",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ukly")
+}],
+"loop": true,
+"name": &"reposo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdomi")
+}],
+"loop": true,
+"name": &"salto",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfjn6"]
 size = Vector2(830.5, 716)
@@ -11,8 +69,10 @@ scale = Vector2(0.0400075, 0.0375771)
 script = ExtResource("1_sfjn6")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_tguo2")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(18.7005, 16.5538)
+sprite_frames = SubResource("SpriteFrames_qdomi")
+animation = &"caminar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.75, 17)

@@ -10,7 +10,9 @@
 top_level = true
 texture_filter = 1
 position = Vector2(149, 215)
+scale = Vector2(0.0569174, 0.0586505)
 move_speed = 100.0
+jump_speed = 400.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
