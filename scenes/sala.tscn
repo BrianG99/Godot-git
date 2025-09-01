@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfwnvqbhdbv8s"]
+[gd_scene load_steps=5 format=3 uid="uid://cfwnvqbhdbv8s"]
 
+[ext_resource type="Script" uid="uid://djvxlamj4o741" path="res://scenes/sala.gd" id="1_ltybl"]
 [ext_resource type="PackedScene" uid="uid://dig2m3go6ub42" path="res://character/perro.tscn" id="1_mteyr"]
 [ext_resource type="Texture2D" uid="uid://bfh8wrb1l6d2x" path="res://assets/fondo.jpg" id="1_uox7l"]
 [ext_resource type="PackedScene" uid="uid://b0xovowqc05lm" path="res://cosas/suelo.tscn" id="3_3rsqy"]
 
 [node name="Sala" type="Node2D"]
+script = ExtResource("1_ltybl")
 
 [node name="Perro" parent="." instance=ExtResource("1_mteyr")]
 top_level = true
@@ -45,3 +47,13 @@ position = Vector2(416, 232)
 
 [node name="StaticBody2D8" parent="." instance=ExtResource("3_3rsqy")]
 position = Vector2(480, 232)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+
+[node name="timer_label" type="Label" parent="Timer"]
+offset_left = 209.0
+offset_top = 52.0
+offset_right = 249.0
+offset_bottom = 75.0
