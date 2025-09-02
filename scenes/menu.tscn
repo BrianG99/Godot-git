@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://ucdcu5tuunf8"]
+
+[ext_resource type="Script" uid="uid://bm335f7tcfkil" path="res://scenes/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://cwehsfmshqc2b" path="res://assets/Copilot_20250902_083114.png" id="1_yqeox"]
+
+[sub_resource type="Theme" id="Theme_vjb58"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(0.533333, 0.639216, 0.45098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+bg_color = Color(0.775241, 0.509377, 0.608037, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.219501, 0.219501, 0.219501, 1)
+anti_aliasing_size = 1.843
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(0.533333, 0.639216, 0.45098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
+bg_color = Color(0.776471, 0.509804, 0.607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
+bg_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+bg_color = Color(0.535061, 0.639868, 0.452046, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
+bg_color = Color(0.776471, 0.509804, 0.607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
+bg_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjb58")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vjb58")
+color = Color(0.322328, 0.598816, 0.56455, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yqeox")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -40.5
+offset_right = 64.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhnvy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ytvr")
+text = "Comenzar Test
+"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+text = "Opciones Test"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6lef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_70i5f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
+text = "Salir Test"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
