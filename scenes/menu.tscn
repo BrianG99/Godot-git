@@ -1,9 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://ucdcu5tuunf8"]
+[gd_scene load_steps=15 format=3 uid="uid://ucdcu5tuunf8"]
 
 [ext_resource type="Script" uid="uid://bm335f7tcfkil" path="res://scenes/menu.gd" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://cwehsfmshqc2b" path="res://assets/Copilot_20250902_083114.png" id="1_yqeox"]
 
 [sub_resource type="Theme" id="Theme_vjb58"]
+
+[sub_resource type="GDScript" id="GDScript_4ytvr"]
+script/source = "extends VBoxContainer
+
+func _on_button_pressed():
+	$AudioStreamPlayer.play()
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
 bg_color = Color(0.533333, 0.639216, 0.45098, 1)
@@ -23,6 +30,13 @@ bg_color = Color(0.776471, 0.509804, 0.607843, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
 bg_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[sub_resource type="GDScript" id="GDScript_vjb58"]
+script/source = "extends Button
+
+func _on_button_pressed():
+	$AudioStreamPlayer2D.play()
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
 bg_color = Color(0.535061, 0.639868, 0.452046, 1)
@@ -76,6 +90,7 @@ offset_bottom = 40.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
+script = SubResource("GDScript_4ytvr")
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -85,12 +100,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_4ytvr")
 text = "Comenzar Test
 "
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Options1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Opciones Test"
+script = SubResource("GDScript_vjb58")
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -100,5 +116,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
 text = "Salir Test"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options1" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

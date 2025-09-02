@@ -11,3 +11,6 @@ func _on_volume_pressed() -> void:
 
 func _on_return_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
+func _ready():
+	Musicmenu.play_menu_music()

@@ -10,6 +10,7 @@ func _ready():
 	countdown_timer.start()
 	update_timer_label()
 	set_process(true)
+	Musicmenu.stop_music()
 
 func _process(delta):
 	if countdown_timer.time_left > 0:
