@@ -90,7 +90,7 @@ layout_mode = 2
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
-text = "Sonido"
+text = "Sonidos"
 
 [node name="return" type="Button" parent="VBoxContainer"]
 layout_mode = 2
